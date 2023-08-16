@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: template (~{:: #description-content})}">
+
+<section id="description-content">
+  <div class="container">
+    <h2 style="font-size: 2em">Opis roli</h2>
+    <h3 th:text="${jobOffer}"></h3>
+    <p th:text="${description}"></p>
+    <a th:href="@{/resume}" class="btn btn-sm">Aplikuj</a>
+  </div>
+</section>
+
+</html>

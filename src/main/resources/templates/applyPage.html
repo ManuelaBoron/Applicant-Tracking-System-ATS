@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: template (~{:: #application-content})}">
+
+<section id="application-content">
+  <div class="container">
+    <h1>Aplikacja</h1>
+    <div>
+      <p style="font-weight: 200">Wypełnij poniższy formularz, aby rekruterzy mogli się z Tobą skontaktować</p>
+    </div>
+    <form method="post" th:object="${applicationDetails}">
+      <div>
+        <input th:field="*{firstName}" type="text" placeholder="Imię" class="input" required>
+      </div>
+      <div>
+        <input th:field="*{lastName}" type="text" placeholder="Nazwisko" class="input" required>
+      </div>
+      <div>
+        <input th:field="*{phoneNumber}" type="text" placeholder="Numer Telefonu" class="input" required>
+      </div>
+      <div>
+        <input th:field="*{emailAddress}" type="text" placeholder="Adres e-mail" class="input" required>
+      </div>
+      <div>
+        <input th:field="*{jobTitle}" type="text" placeholder="Tytuł roli na którą aplikujesz" class="input"  required>
+      </div>
+      <button class="btn">Aplikuj</button>
+    </form>
+  </div>
+</section>
+
+</html>

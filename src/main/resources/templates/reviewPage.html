@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: template (~{:: #review-content})}">
+
+<section id="review-content">
+  <div class="container">
+    <h1>Opinie</h1>
+    <div th:each="review : ${reviews}">
+      <h3 th:text="${review.name}"></h3>
+      <p style="font-weight: 200" th:text="${review.review}"></p>
+    </div>
+    <h3>Dodaj nową opinię</h3>
+    <form method="post" th:object="${review}">
+      <div>
+        <input th:field="*{name}" type="text" placeholder="Nazwa" class="input">
+      </div>
+      <div>
+        <input th:field="*{review}" type="text" placeholder="Twoja opinia..." class="input">
+      </div>
+      <div>
+        <button th:href="@{/review(review)}" class="btn">DODAJ</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+</html>

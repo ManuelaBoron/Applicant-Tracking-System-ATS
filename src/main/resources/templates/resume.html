@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: template (~{:: #resume-content})}">
+<head>
+  <title>Resume</title>
+</head>
+<body>
+<section id="resume-content">
+<div class="container">
+  <h1 style="font-size: 3em">Dodaj swoje CV</h1>
+  <div class="row">
+    <form method="POST" action="/resume" enctype="multipart/form-data">
+      <input class="form-control" type="file" name="resume" accept="image/*">
+      <input class="btn btn-sm" type="submit" value="Submit">
+    </form>
+    <div class="row">
+      <div class="col-4 text-center" th:each="o : ${resumes}">
+        <img class="img-thumbnail rounded" th:src="'/resume/' + ${o.name}" style="max-height: 200px">
+        <div th:text="${o.name}"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+</body>
+</html>

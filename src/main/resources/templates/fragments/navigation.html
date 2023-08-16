@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<nav id="page-nav" th:fragment="nav">
+  <div class="container" id="nav-row">
+    <a th:href="@{/}" id="logo">Global Corp.</a>
+    <a class="nav-item" th:href="@{/select}">Oferty pracy</a>
+    <a class="nav-item" th:href="@{/resume}">Aplikuj</a>
+    <a class="nav-item" th:href="@{/review}">Opinie</a>
+    <a class="nav-item" th:href="@{/data}">Dane</a>
+  </div>
+</nav>
+
+</body>
+</html>

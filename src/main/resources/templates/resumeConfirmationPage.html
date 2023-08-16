@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: template (~{:: #resume-confirmed-content})}">
+
+<section id="resume-confirmed-content">
+  <div class="container">
+    <h1 style="font-size: 3em">Dziękujemy za dodanie CV!</h1>
+    <p>W kolejnym kroku wypełnij formularz kontaktowy, aby przyspieszyc proces rekrutacji.</p>
+    <td>
+      <a th:href="@{/apply}" class="btn btn-sm">Formularz kontaktowy</a>
+    </td>
+  </div>
+</section>
+
+</html>

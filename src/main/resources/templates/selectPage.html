@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: template (~{:: #select-page-section})}">
+<head>
+    <title th:text="${title}"></title>
+</head>
+<body>
+<div>
+    <section id="select-page-section" class="my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <h1 th:text="${title}"></h1>
+
+                    <table>
+                        <tr th:each="jobOffersRow : ${jobOffers}">
+                            <td th:each="jobOffer : ${jobOffersRow}"
+                                th:style="'width: 100px; height: 100px'"
+                                th:text="${jobOffer}"
+                                th:data-jobOffer-href="'/select/' + ${jobOffer}"
+                                th:onclick="location.href=this.getAttribute('data-jobOffer-href')">
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>

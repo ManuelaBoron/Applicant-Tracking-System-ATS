@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: template (~{:: #data-page-section})}">
+<head>
+  <title th:text="${title}"></title>
+</head>
+<body>
+
+<div>
+  <section id="data-page-section" class="my-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+
+          <h1 th:text="${title}"></h1>
+
+          <div style="max-width: 800px; margin: 50px auto">
+            <canvas id="myChart"></canvas>
+          </div>
+
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+          <script th:inline="javascript">
+            const ctx = document.getElementById('myChart');
+
+            new Chart(ctx, {
+              type: 'bar',
+              data: {
+                labels: [[${labels}]],
+                datasets: [{
+                  data: [[${data}]],
+                  borderWidth: 1
+                }]
+              },
+              options: {
+                plugins: {
+                  legend: {display: false}
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true
+                  }
+                }
+              }
+            });
+          </script>
+
+          <table class="table">
+            <tr>
+              <th>ID</th>
+              <th colspan="2">Oferta pracy</th>
+              <th>Data</th>
+            </tr>
+            <tr th:each="selectedJobOffer : ${selectedJobOffers}">
+              <td th:text="${selectedJobOffer.id}"></td>
+              <td th:text="${selectedJobOffer.jobOffer}"></td>
+              <td th:text="${#dates.format(selectedJobOffer.ctime, 'dd MM YYYY HH:mm:ss')}"></td>
+            </tr>
+
+          </table>
+
+        </div>
+      </div>
+  </section>
+</div>
+
+</body>
+</html>
