@@ -12,6 +12,7 @@ Project will be created with:
 * Thymeleaf
 * Maven
 * Spring Boot
+* Chart.js
 * MsSql
 * PostgeSQL
 
