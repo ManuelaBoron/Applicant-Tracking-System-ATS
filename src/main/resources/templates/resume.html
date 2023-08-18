@@ -11,11 +11,6 @@
       <input class="form-control" type="file" name="resume" accept="image/*">
       <input class="btn btn-sm" type="submit" value="Submit">
     </form>
-    <div class="row">
-      <div class="col-4 text-center" th:each="o : ${resumes}">
-        <img class="img-thumbnail rounded" th:src="'/resume/' + ${o.name}" style="max-height: 200px">
-        <div th:text="${o.name}"></div>
-      </div>
     </div>
   </div>
 </div>
