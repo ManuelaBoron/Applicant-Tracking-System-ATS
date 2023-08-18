@@ -3,7 +3,8 @@
 # Applicant-Tracking-System-ATS
 ATS helps to manage the recruiting process and organizes information about applicants.
 
-### This application allows users to apply for different job requisitions, add their resumes, fill the contact form and leave a feedback in comment section. It also counts the data how many users clicked each job title and shows details. It can be usuful if other users would like to see how big competition is for each role. It collects all data from contact form on database. All data was created for the project purposes and is not real.
+## Description
+This application allows users to apply for different job requisitions, add their resumes, fill the contact form and leave a feedback in comment section. It also counts the data how many users clicked each job title and shows details. It can be usuful if other users would like to see how big competition is for each role. It collects all data from contact form on database. All data was created for the project purposes and is not real.
 
 ## Technologies
 Project will be created with:
